@@ -1,0 +1,27 @@
+name: CI pipeline for Testing the React app
+
+on:
+  push:
+    branches: 
+    - main
+
+
+jobs: 
+  #Run the node app and test the app
+  test:
+    name: "Run unit tests"
+    defaults:
+      run:
+        shell: bash
+        
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+      name: "Checkout the repositry"    
+
+    - name: 'Install dependencies'
+      run: npm install
+
+    - name: 'Run tests for syntax errors'
+      run : npm run tests
