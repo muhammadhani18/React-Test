@@ -23,5 +23,8 @@ jobs:
     - name: 'Install dependencies'
       run: npm install
 
-    - name: 'Run tests for syntax errors'
-      run : npm run tests
+    - name: 'Run unit tests'
+      run: npm test
+
+    - name: 'Run linting scripts for syntax errors'   
+      run: npm run lint
